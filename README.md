@@ -42,4 +42,8 @@ DynGenius/
 ├── console/ # Interface console
 ├── data/ # Mémoires sauvegardées, configurations
 ├── tests/ # Scripts de test
-└── README.md # Documentation 
+└── README.md # Documentation
+
+Note importante : Ce dépôt présente uniquement une version partielle et documentée de DynG.
+La version complète, incluant le moteur cognitif intégral, est protégée et disponible 
+sous licence commerciale ou académique sur demande.

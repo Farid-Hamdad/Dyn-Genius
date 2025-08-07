@@ -47,3 +47,10 @@ DynGenius/
 Note importante : Ce dépôt présente uniquement une version partielle et documentée de DynG.
 La version complète, incluant le moteur cognitif intégral, est protégée et disponible 
 sous licence commerciale ou académique sur demande.
+
+🤝 Contribution
+Les contributions sont les bienvenues !
+Ouvrir une issue pour discuter des améliorations
+Forker le projet et soumettre une PR
+
+Contact : farid.dyn2025@gmail.com

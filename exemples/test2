@@ -1,4 +1,5 @@
-Oui. Je vais créer un mini-domaine « bien-être étudiant » et exécuter DynG dessus dans un notebook-like 100 % autonome (aucune donnée externe requise).
+Oui. Je vais créer un mini-domaine « bien-être étudiant » et exécuter DynG dessus dans un notebook-like 100 
+% autonome (aucune donnée externe requise).
 Objectif : étudier l’équilibre « réussite scolaire » vs « santé mentale ».
 Je fournis le code complet, puis un rapport visuel et textuel du comportement du système.
 ──────────────────
@@ -94,7 +95,8 @@ dream | C=0.46 | Rêve généré
 Initialisation « auto » place déjà les activations proches de G ;
 La règle « Réussite_Examens → Charge_Mentale » fait grimper l’activation négative de « Charge_Mentale » autour des pas 3-5 ;
 Le MetaModule abaisse légèrement η quand il détecte un écart A-G croissant, stabilisant le système vers t=10-15 ;
-Le rêve active un mélange inattendu (ex. « Sommeil_Qualité » + « Burn_out ») ce qui illustre la consolidation hebbienne « hors distribution ».
+Le rêve active un mélange inattendu (ex. « Sommeil_Qualité » + « Burn_out ») ce qui illustre la consolidation hebbienne 
+« hors distribution ».
 ──────────────────
 8. Export des logs
 ──────────────────

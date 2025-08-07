@@ -49,6 +49,4 @@ La version complète, incluant le moteur cognitif intégral, est protégée et d
 sous licence commerciale ou académique sur demande.
 
 Les contributions sont les bienvenues !
-Ouvrir une issue pour discuter des améliorations
-
 Contact : farid.dyn2025@gmail.com

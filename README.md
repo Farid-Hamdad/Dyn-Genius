@@ -33,17 +33,6 @@ DynG est conçu à la fois comme un moteur expérimental de simulation cognitive
 - 📚 Version console pour les tests avancés et l'IA de fond
 - 
 
-- 📂 Structure du projet
-DynGenius/
-│
-├── core/ # Moteur central
-├── addons/ # Modules complémentaires (valence, rêve, etc.)
-├── gui/ # Interface graphique (Tkinter)
-├── console/ # Interface console
-├── data/ # Mémoires sauvegardées, configurations
-├── tests/ # Scripts de test
-└── README.md # Documentation
-
 Note importante : Ce dépôt présente uniquement une version partielle et documentée de DynG.
 La version complète, incluant le moteur cognitif intégral, est protégée et disponible 
 sous licence commerciale ou académique sur demande.

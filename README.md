@@ -55,17 +55,17 @@ Conclusion générale :
 DynG est un outil puissant et flexible, capable de générer des idées nouvelles et d'apprendre à partir de ses propres expériences. En prenant en charge des contradictions complexes et en créant des solutions novatrices à partir de celles-ci, DynG s’inscrit dans un paradigme d’intelligence cognitive avancée et pourrait être une base pour des systèmes d'IA capables de réflexion adaptative dans des environnements dynamiques et incertains.
 
 
-## 🚀 Fonctionnalités principales
+##  Fonctionnalités principales
 
-- 🔁 Mécanisme de propagation d’activation entre concepts
-- 🧠 Mémoire à court et long terme, avec oubli intelligent
-- 🎯 Activation guidée par intention ou par contexte
-- ❤️ Gestion de la valence émotionnelle (positive, neutre, négative)
-- 🌙 Fonction de rêve et exploration associative
-- 🧩 Modules plug-and-play : logique, contradiction, temporalité, etc.
-- 💾 Système de sauvegarde/chargement de la mémoire
-- 🖼️ Interface graphique minimaliste (Tkinter)
-- 📚 Version console pour les tests avancés et l'IA de fond
+-  Mécanisme de propagation d’activation entre concepts
+-  Mémoire à court et long terme, avec oubli intelligent
+-  Activation guidée par intention ou par contexte
+-  Gestion de la valence émotionnelle (positive, neutre, négative)
+-  Fonction de rêve et exploration associative
+-  Modules plug-and-play : logique, contradiction, temporalité, etc.
+-  Système de sauvegarde/chargement de la mémoire
+-  Interface graphique minimaliste (Tkinter)
+-  Version console pour les tests avancés et l'IA de fond
 - 
 
 Note importante : Ce dépôt présente uniquement une version partielle et documentée de DynG.

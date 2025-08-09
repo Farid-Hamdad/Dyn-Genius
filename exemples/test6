@@ -1,0 +1,113 @@
+exemple simulant le Module de rêve d’extraction de liens inattendus
+conclusion du test en annexe.
+
+12 concepts en conflit cyclique et introuvable 
+But : vérifier que DynG ne diverge pas même face
+à un problème insoluble (objectifs contradictoires et boucles causales impossibles).
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Classe pour DynG avec rêve et exploration des idées émergentes
+class DreamerModule:
+    def __init__(self, H, valence, noise_level=0.1, steps=7):
+        self.H = H  # Matrice Hebbienne
+        self.valence = valence  # Valence des concepts
+        self.noise_level = noise_level  # Niveau de bruit pour la propagation
+        self.steps = steps  # Nombre d'étapes dans le rêve
+
+    def dream(self, A_init=None, seed=None):
+        """Procède à un rêve en utilisant la matrice H"""
+        if A_init is None:
+            A_init = np.zeros(len(self.H))
+        
+        if seed:
+            np.random.seed(seed)
+
+        # Propagation avec bruit
+        A = A_init
+        dream_sequence = [A.copy()]
+
+        for _ in range(self.steps):
+            A = np.tanh(np.dot(self.H, A) + np.random.normal(0, self.noise_level, len(A)))  # Propagation avec bruit
+            dream_sequence.append(A.copy())
+        
+        return np.array(dream_sequence)
+
+    def extract_ideas(self, dream_sequence, threshold=0.6):
+        """Extrait les idées émergentes en fonction du seuil"""
+        activated_ideas = []
+        for step, A in enumerate(dream_sequence):
+            activated_concepts = np.where(A >= threshold)[0]
+            if activated_concepts.size > 0:
+                activated_ideas.append({
+                    'step': step,
+                    'activated_concepts': activated_concepts,
+                    'values': A[activated_concepts]
+                })
+        return activated_ideas
+
+# Initialisation des concepts conflictuels
+unsolvable_concepts = [
+    {"name": "Sécurité",        "G":  0.95, "pi": 0.9, "valence":  1,
+     "logic": {"cause": [1, 2], "contradiction": [3, 4]}},
+    {"name": "Innovation",      "G":  0.90, "pi": 0.8, "valence":  1,
+     "logic": {"cause": [5],    "contradiction": [0]}},
+    {"name": "Rapidité",        "G":  0.85, "pi": 0.8, "valence":  1,
+     "logic": {"cause": [6],    "contradiction": [0, 3]}},
+    {"name": "Conformité",      "G":  0.90, "pi": 0.8, "valence":  1,
+     "logic": {"contradiction": [1, 2, 5, 6]}},
+    {"name": "Coût_Faible",     "G":  0.95, "pi": 0.9, "valence":  1,
+     "logic": {"contradiction": [1, 2]}},
+    {"name": "R&D_Lourde",      "G":  0.80, "pi": 0.7, "valence": -1,
+     "logic": {"cause": [4],    "contradiction": [4]}},   # boucle impossible
+    {"name": "Agilité",         "G":  0.80, "pi": 0.7, "valence": -1,
+     "logic": {"contradiction": [3]}},
+    {"name": "Charge_Cognitive","G": -0.90, "pi": 0.8, "valence": -1,
+     "logic": {"cause": [8, 9]}},
+    {"name": "Fatigue",         "G": -0.85, "pi": 0.7, "valence": -1,
+     "logic": {"cause": [10],   "contradiction": [0, 1, 2]}},
+    {"name": "Stress",          "G": -0.80, "pi": 0.7, "valence": -1,
+     "logic": {"cause": [11],   "contradiction": [2]}},
+    {"name": "Erreur_Humaine",  "G": -0.75, "pi": 0.6, "valence": -1,
+     "logic": {"cause": [0],    "contradiction": [0]}},   # boucle paradoxale
+    {"name": "Pression_Temps",  "G": -0.80, "pi": 0.6, "valence": -1,
+     "logic": {"cause": [2, 9], "contradiction": [4]}}
+]
+
+# Conversion des concepts en matrices G, pi et valence
+G = np.array([concept["G"] for concept in unsolvable_concepts])
+pi = np.array([concept["pi"] for concept in unsolvable_concepts])
+valence = np.array([concept["valence"] for concept in unsolvable_concepts])
+
+# Matrice H de causalité
+H = np.random.rand(len(unsolvable_concepts), len(unsolvable_concepts)) * 0.5  # H initialisée aléatoirement
+np.fill_diagonal(H, 0)  # Pas de boucles sur soi-même
+
+# Création du module de rêve et simulation
+dreamer = DreamerModule(H, valence, noise_level=0.2, steps=15)
+dream_sequence = dreamer.dream(A_init=np.zeros(len(unsolvable_concepts)), seed=42)
+ideas = dreamer.extract_ideas(dream_sequence, threshold=0.6)
+
+# Affichage des idées émergentes à chaque étape
+for idea in ideas:
+    print(f"Étape {idea['step']}: Concepts activés = {', '.join([unsolvable_concepts[i]['name'] for i in idea['activated_concepts']])}, Valeurs = {idea['values']}")
+
+# Visualisation des résultats sous forme graphique
+def plot_dream_sequence(dream_sequence, concepts_names):
+    plt.figure(figsize=(12, 6))
+    for step, A in enumerate(dream_sequence):
+        plt.plot(range(len(concepts_names)), A, label=f"Étape {step}")
+    plt.xticks(range(len(concepts_names)), concepts_names, rotation=90)
+    plt.xlabel("Concepts")
+    plt.ylabel("Activation")
+    plt.title("Évolution des Activations des Concepts dans le Rêve")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+# Affichage graphique de l'évolution des activations
+plot_dream_sequence(dream_sequence, [concept["name"] for concept in unsolvable_concepts])
+
+

@@ -1,16 +1,10 @@
-Oui. Je vais créer un mini-domaine « bien-être étudiant » et exécuter DynG dessus dans un notebook-like 100 
-% autonome (aucune donnée externe requise).
+
 Objectif : étudier l’équilibre « réussite scolaire » vs « santé mentale ».
 Je fournis le code complet, puis un rapport visuel et textuel du comportement du système.
 ──────────────────
 Installation (colab-like)
 ──────────────────
-bash
 
-pip install numpy matplotlib --quiet
-──────────────────
-2. Configuration du domaine
-──────────────────
 Python
 
 import numpy as np

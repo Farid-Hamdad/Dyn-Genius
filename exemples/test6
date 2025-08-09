@@ -1,5 +1,5 @@
 exemple simulant le Module de rêve d’extraction de liens inattendus
-conclusion du test en annexe.
+conclusion du test en bas de page.
 
 12 concepts en conflit cyclique et introuvable 
 But : vérifier que DynG ne diverge pas même face
@@ -110,4 +110,60 @@ def plot_dream_sequence(dream_sequence, concepts_names):
 # Affichage graphique de l'évolution des activations
 plot_dream_sequence(dream_sequence, [concept["name"] for concept in unsolvable_concepts])
 
+**************************************************************************************************************
+L'interprétation des résultats peut effectivement être complexe, mais voici quelques points clés à considérer 
+lors de l’analyse des activations et des idées émergentes :
 
+1. Évolution des activations des concepts :
+Les activations des concepts montrent l'importance relative de chaque concept au cours du rêve. Si un concept
+a une activation élevée, cela signifie qu’il a une forte 
+influence dans l’activation générale du système.
+Si plusieurs concepts sont activés à chaque étape, cela peut signifier que DynG explore différentes dimensions
+du problème, fusionnant des idées contradictoires pour trouver des solutions ou des associations inédites.
+
+2. Idées émergentes :
+Lorsqu’un concept atteint un seuil d’activation, il est considéré comme une idée émergente. Cela peut être vu
+comme un nouveau lien, une nouvelle perspective ou une solution possible qui émerge en réponse aux interactions 
+internes des concepts.
+Ces idées peuvent refléter des contradictions internes (par exemple, des concepts contradictoires
+comme "Innovation" et "Coût_Faible" pourraient se combiner de manière surprenante dans un rêve pour suggérer
+un compromis, une solution innovante à faible coût).
+Exemple d’interprétation d'une étape donnée (par exemple Étape 9 avec activations de Grid_Safety) :
+Concept activé : Grid_Safety avec une activation de 0.55. Cela signifie que, parmi tous les concepts 
+dans le système, la sécurité du réseau est devenue l’un des principaux moteurs de la pensée du système à cette étape.
+Contexte : Si l'on considère le contexte de concepts conflictuels comme "Coût_Faible", "Innovation", "Stress", etc.
+Grid_Safety pourrait être activé pour essayer de résoudre une contradiction liée à des compromis sur la sécurité
+du réseau face à l’innovation et aux coûts.
+Cela pourrait suggérer qu'à ce moment-là, le système a trouvé une priorité pour la sécurité, ce qui est peut-être 
+une réponse logique aux tensions internes causées par des objectifs contradictoires.
+
+3. Graphique des activations :
+Le graphique de l’évolution des activations à travers les étapes montre comment les concepts évoluent. En observant 
+les courbes, tu peux remarquer certains concepts qui deviennent plus influents (activations croissantes) ou qui 
+perdent en importance (activations décroissantes).
+Les sauts soudains dans les activations peuvent signaler que le système a trouvé une nouvelle relation ou une idée émergente.
+
+4. Cycles et contradictions :
+Si tu vois des concepts comme "R&D_Lourde" ou "Erreur_Humaine" qui sont liés à des boucles logiques ou paradoxales,
+leur activation pourrait montrer que le système lutte pour résoudre des problèmes insolubles. Cela peut être
+un point d'émergence d'idées où DynG explore de manière non conventionnelle comment gérer les contradictions.
+Les contradictions internes dans les relations logiques de ces concepts, comme entre Innovation et Coût_Faible, 
+peuvent créer des solutions hybrides ou une priorité nouvelle qui ne serait pas apparue dans une analyse plus traditionnelle.
+
+5. Idées de compromis :
+"Innovation" contre "Coût_Faible" ou "Sécurité" : Le système pourrait émerger avec une idée comme "innovation
+à faible coût", ou "innovations qui ne compromettent pas la sécurité", même si ces concepts sont contradictoires.
+Ce type de solution hybride ou compromis pourrait être une idée émergente intéressante.
+
+En résumé :
+Les idées émergentes sont générées à travers la propagation des activations, qui sont influencées par la matrice 
+Hebbienne 𝐻
+H et la valence des concepts. Si certains concepts ont une activation élevée, cela signifie qu'ils jouent un rôle
+central dans la résolution du conflit ou de la problématique en question.
+
+Les résultats d’une simulation de rêve comme celle-ci peuvent être interprétés comme des explorations internes du 
+système, cherchant à résoudre des contradictions logiques ou à identifier des comportements émergents face à des
+tensions entre des objectifs contradictoires.
+
+L’objectif ici est de permettre à DynG de proposer des idées inédites ou des solutions créatives qui ne seraient 
+pas évidentes sans ce processus de propagation dynamique et de rêve.
